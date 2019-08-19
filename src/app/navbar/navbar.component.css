@@ -1,0 +1,107 @@
+
+.megamenu-li {
+	position: static;
+}
+
+.megamenu {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	right: 0;
+	padding: 15px;
+}
+
+.megamenu a:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0,0,0,0.3)    
+
+}
+#languageDropdown{
+    color: black;
+}
+
+#todays_date{
+    font-weight: bold;
+}
+
+#selectedCountry{
+    font-weight: bold;
+}
+
+.main_title{
+    font-family: Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+    line-height: 90%;
+}
+
+.social-icon{
+    border-radius: 50%;
+}
+
+.social-icon:hover{
+    cursor: pointer;
+    color: lightgray;
+
+
+}
+
+
+
+.languagepicker {
+	background-color: #FFF;
+	display: inline-block;
+	padding: 0;
+	height: 40px;
+	overflow: hidden;
+	transition: all .3s ease;
+	margin: 0 50px 10px 0;
+	vertical-align: top;
+	float: left;
+}
+
+.languagepicker:hover {
+	/* don't forget the 1px border */
+	height: 81px;
+}
+
+.languagepicker a{
+	color: #000;
+	text-decoration: none;
+}
+
+.languagepicker li {
+	display: block;
+	padding: 0px 20px;
+	line-height: 40px;
+	border-top: 1px solid #EEE;
+}
+
+.languagepicker li:hover{
+	background-color: #EEE;
+}
+
+.languagepicker a:first-child li {
+	border: none;
+	background: #FFF !important;
+}
+
+.languagepicker li img {
+	margin-right: 5px;
+}
+
+.roundborders {
+	border-radius: 5px;
+}
+
+.large:hover {
+	/* 
+	don't forget the 1px border!
+	The first language is 40px heigh, 
+	the others are 41px
+	*/
+	height: 245px;
+}

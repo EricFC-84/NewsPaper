@@ -1,0 +1,92 @@
+.title:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.carousel-item img{
+/*     max-height: 25%;
+    width: 100%;
+    height: auto; */
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.carousel-caption{
+    background-color: black;
+    opacity: 0.7;
+    /* width: 75%; */
+    left: 10%;
+    right: 10%;;
+}
+
+.carousel-caption h4:hover{
+    cursor: pointer;
+    
+}
+
+a[class^="carousel-control"]{
+    width: 5%;
+}
+
+.side-articles{
+    min-height: 350px;
+}
+
+.single-side-article a{
+    color: black;
+
+}
+
+.first-section{
+    padding-bottom:20px;
+    border-bottom: 2px solid gray;
+}
+
+.second-section{
+    padding-bottom:20px;
+    border-bottom: 2px solid gray;
+}
+
+
+.card-article{
+    margin-top: 1em;
+}
+
+.card-article .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center;
+  }
+  
+  .card-article .img-wrap img {
+    max-height: 390px;
+    max-width: 100%;
+    
+    object-fit: cover;
+  }
+  
+  .card-article .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .card-article .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .label-rating {
+    margin-right: 10px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .card-article .price-old {
+    color: #999;
+  }
+  

@@ -1,1 +1,184 @@
-<p>navbar works!</p>
+<div class="container">
+  <div class="row header-date">
+    <div class="col-6 text-left nav-link">TODAY IS: <span id="todays_date"></span></div>
+    <div class="col-6 text-right">
+      <a class="nav-link dropdown-toggle" href="" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Country: <span id="selectedCountry">{{_data.currentCountry}}</span></a>
+      <div class="dropdown-menu megamenu" aria-labelledby="languageDropdown">
+        <div class="row">
+          <div class="col-sm-4 col-lg-2">
+            <a *ngFor="let country of _data.allCountries.slice(0,9)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+
+            <!-- <a class="dropdown-item" (click)="changeLanguage()">ae</a>
+            <a class="dropdown-item" href="#">ar</a>
+            <a class="dropdown-item" href="#">at</a>
+            <a class="dropdown-item" href="#">au</a>
+            <a class="dropdown-item" href="#">be</a>
+            <a class="dropdown-item" href="#">bg</a>
+            <a class="dropdown-item" href="#">br</a>
+            <a class="dropdown-item" href="#">ca</a>
+            <a class="dropdown-item" href="#">ch</a> -->
+
+          </div>
+          <div class="col-sm-4 col-lg-2">
+                <a *ngFor="let country of _data.allCountries.slice(9,18)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+            <!-- <a class="dropdown-item" href="#">cn</a>
+            <a class="dropdown-item" href="#">co</a>
+            <a class="dropdown-item" href="#">cu</a>
+            <a class="dropdown-item" href="#">cz</a>
+            <a class="dropdown-item" href="#">de</a>
+            <a class="dropdown-item" href="#">eg</a>
+            <a class="dropdown-item" href="#">fr</a>
+            <a class="dropdown-item" href="#">gb</a>
+            <a class="dropdown-item" href="#">gr</a> -->
+
+          </div>
+
+
+          <div class="col-sm-4 col-lg-2">
+                <a *ngFor="let country of _data.allCountries.slice(18,27)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+            <!-- <a class="dropdown-item" href="#">hk</a>
+            <a class="dropdown-item" href="#">hu</a>
+            <a class="dropdown-item" href="#">id</a>
+            <a class="dropdown-item" href="#">ie</a>
+            <a class="dropdown-item" href="#">il</a>
+            <a class="dropdown-item" href="#">in</a>
+            <a class="dropdown-item" href="#">it</a>
+            <a class="dropdown-item" href="#">jp</a>
+            <a class="dropdown-item" href="#">kr</a> -->
+
+          </div>
+
+          <div class="col-sm-4 col-lg-2">
+                <a *ngFor="let country of _data.allCountries.slice(27,36)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+            <!-- <a class="dropdown-item" href="#">lt</a>
+            <a class="dropdown-item" href="#">lv</a>
+            <a class="dropdown-item" href="#">ma</a>
+            <a class="dropdown-item" href="#">mx</a>
+            <a class="dropdown-item" href="#">my</a>
+            <a class="dropdown-item" href="#">ng</a>
+            <a class="dropdown-item" href="#">nl</a>
+            <a class="dropdown-item" href="#">no</a>
+            <a class="dropdown-item" href="#">nz</a> -->
+
+          </div>
+          <div class="col-sm-4 col-lg-2">
+                <a *ngFor="let country of _data.allCountries.slice(36,45)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+            <!-- <a class="dropdown-item" href="#">ph</a>
+            <a class="dropdown-item" href="#">pl</a>
+            <a class="dropdown-item" href="#">pt</a>
+            <a class="dropdown-item" href="#">ro</a>
+            <a class="dropdown-item" href="#">rs</a>
+            <a class="dropdown-item" href="#">ru</a>
+            <a class="dropdown-item" href="#">sa</a>
+            <a class="dropdown-item" href="#">se</a>
+            <a class="dropdown-item" href="#">sg</a> -->
+
+          </div>
+
+          <div class="col-sm-4 col-lg-2">
+                <a *ngFor="let country of _data.allCountries.slice(45,54)" class="dropdown-item" (click)="changeLanguage(country)">{{country}}</a>
+
+            <!-- <a class="dropdown-item" href="#">si</a>
+            <a class="dropdown-item" href="#">sk</a>
+            <a class="dropdown-item" href="#">th</a>
+            <a class="dropdown-item" href="#">tr</a>
+            <a class="dropdown-item" href="#">tw</a>
+            <a class="dropdown-item" href="#">ua</a>
+            <a class="dropdown-item" href="#">us</a>
+            <a class="dropdown-item" href="#">ve</a>
+            <a class="dropdown-item" href="#">za</a> -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row header-main align-items-center    ">
+    <div class="col-3 main_slogan">LOGO/SLOGAN</div>
+    <div class="col-6 main_title">ALL YOUR NEWS ARE BELONG TO US</div>
+    <div class="col-3 social_links text-center">
+      <!--Facebook-->
+      <a class=" mr-3" role="button"><i class="social-icon fab fa-facebook-f"></i></a>
+      <!--Twitter-->
+      <a class=" mr-3" role="button"><i class="social-icon fab fa-twitter"></i></a>
+      <!--Linkedin-->
+      <a class=" mr-3" role="button"><i class="social-icon fab fa-linkedin-in"></i></a>
+      <!--Instagram-->
+      <a class=" mr-3" role="button"><i class="social-icon fab fa-instagram"></i></a>
+      <!--Youtube-->
+      <a class=" mr-3" role="button"><i class="social-icon fab fa-youtube"></i></a>
+      <!--Email-->
+      <a class=" mr-3" role="button"><i class="social-icon far fa-envelope"></i></a>
+
+    </div>
+
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-md navbar-light">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" [routerLink]="['/']" (click)="goHome()">Home</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['']" (click)="loadSection('')">Home
+                
+              </a>
+            </li> -->
+            <li class="nav-item" *ngFor="let category of _data.allCategories; let i = 'index'">
+              <a class="nav-link" [routerLink]="['/section/'+ category]">{{category|titlecase}}</a>
+            </li>
+            <!--  <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/section/business']" (click)="loadSection('business')">Business</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li> -->
+
+            <!-- Dropdown -->
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+
+          </ul>
+          <!-- Links -->
+
+          <form class="form-inline" (submit)="search()">
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="query" [ngModelOptions]="{standalone: true}">
+            </div>
+          </form>
+        </div>
+        <!-- Collapsible content -->
+
+      </nav>
+      <!--/.Navbar-->
+    </div>
+  </div>
+
+</div>

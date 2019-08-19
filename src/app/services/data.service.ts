@@ -11,28 +11,41 @@ export class DataService {
   filteredArticles:object[]=[]	// Solo noticias del "allArticles" que cumplan nuevos filtros seleccionados
   showArticles:object[]=[]		// Los que se muestran en pantalla si hay más de X
   maxShownArticles:number = 50
-  
+  currentArticle:object = {};
+  searchResults:object[] = []
 	// Todas las categorías de que apareceran en la navbar. Predefinidas en la API
-  allCategories:string[]=["Business", "Entertainment", "General", "Health", "Sciense", "Sports", "Technology"]
-  
+  allCategories:string[]=["business", "entertainment", "general", "health", "science", "sports", "technology"]
+  allCountries:string[]=["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"]
 	//filtros aplicados, que se defininen incialmente. TO DO: según LocalStorage o Geolocalización
+  
+  apiKey:string = "af5b0b0c46f142c9b17ebb8594d353d9";
+  currentCountry = "us";
+  currentLanguage = "en";
+  currentCategory = "general";
+
+
   filters:object={ 
-    country: "",
-	language: "es",
+    country: this.currentCountry,
+	language: this.currentLanguage,
 	category: "",
-	source: "",
+	sources: "",
 	q: "",
 	page:""
   }
-  apiKey:string = "af5b0b0c46f142c9b17ebb8594d353d9"
 
   getNewsByFilters(newFilters:object){
 	this.filters = JSON.parse(JSON.stringify(newFilters))
 	let url = this.generateUrl();
 	this.getNews(url).subscribe(
 		(response) => {
-			this.filteredArticles = [...response["articles"]];
-			console.log(this.filteredArticles)
+			if (this.filters["q"] != "" || this.filters["sources"] != "") { 
+				this.searchResults = [...response["articles"]]
+				this.filteredArticles = [...response["articles"]]
+			} else {
+
+				this.filteredArticles = [...response["articles"]];
+				console.log(this.filteredArticles)
+			}
 		}
 	);
   }
@@ -60,6 +73,15 @@ export class DataService {
   }
 
   constructor(public _api:ApiService) { 
-	this.getNewsByFilters(this.filters)
+	  this.getNews(this.generateUrl()).subscribe(
+		  (response) => {
+			  this.allArticles = [...response["articles"]]
+			  this.filteredArticles = [...response["articles"]]
+
+			  console.log("all:", this.allArticles)
+			  console.log("filtered:", this.filteredArticles)
+		  }
+	)
+	// this.getNewsByFilters(this.filters)
   }
 }
